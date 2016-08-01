@@ -63,6 +63,8 @@ func _main() int {
 	}
 	compress.Stdin, err = git.StdoutPipe()
 	if err != nil {
+		fmt.Println(err)
+		return 1
 	}
 	io, err := os.Create(outFilename)
 	if err != nil {
